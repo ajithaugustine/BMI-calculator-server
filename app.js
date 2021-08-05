@@ -7,8 +7,8 @@ const createError = require('http-errors')
 require('dotenv').config()
 
 
-connectDB()
 app.use(cors())
+connectDB()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 
@@ -34,6 +34,10 @@ app.post('/',async(req,res)=>{
         res.json(error)
     }
 })
+app.get('/ok',(req,res)=>{
+    res.send('<h3>ok</h3>')
+})
+
 
 
 
